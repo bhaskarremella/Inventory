@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [COEXIST\svc-swdpa-prod]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

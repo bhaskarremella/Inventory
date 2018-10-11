@@ -1,0 +1,4 @@
+﻿
+GO
+ALTER ROLE [db_owner] ADD MEMBER [CARVANA\RG-DT-SQL-INV-DB-DEV];
+

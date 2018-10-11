@@ -1,0 +1,2 @@
+﻿CREATE USER [UGLYDUCKLING\svc-infa];
+

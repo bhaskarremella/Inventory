@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [COEXIST\RG-MIS-App Dev General]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

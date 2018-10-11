@@ -1,0 +1,2 @@
+﻿CREATE USER [COEXIST\RG-MIS-DB Dev General] FOR LOGIN [COEXIST\RG-MIS-DB Dev General];
+

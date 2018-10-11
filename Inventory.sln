@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Buy", "Buy\Buy.sqlproj", "{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Buy_20180928", "Buy_20180928\Buy_20180928.sqlproj", "{D56C35A3-B8D2-4489-B782-CDA7598527DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,12 @@ Global
 		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D56C35A3-B8D2-4489-B782-CDA7598527DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56C35A3-B8D2-4489-B782-CDA7598527DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56C35A3-B8D2-4489-B782-CDA7598527DE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D56C35A3-B8D2-4489-B782-CDA7598527DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56C35A3-B8D2-4489-B782-CDA7598527DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56C35A3-B8D2-4489-B782-CDA7598527DE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

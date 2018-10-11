@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [bid]
+    AUTHORIZATION [dbo];
+

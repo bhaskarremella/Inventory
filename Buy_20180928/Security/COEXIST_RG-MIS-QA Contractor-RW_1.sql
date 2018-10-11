@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [COEXIST\RG-MIS-QA Contractor-RW]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

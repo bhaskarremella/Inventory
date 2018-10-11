@@ -1,0 +1,2 @@
+﻿CREATE USER [COEXIST\vshah] FOR LOGIN [COEXIST\VShah];
+
