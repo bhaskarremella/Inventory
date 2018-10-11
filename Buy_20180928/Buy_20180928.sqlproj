@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{d56c35a3-b8d2-4489-b782-cda7598527de}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -318,5 +318,12 @@
     <Build Include="Security\postsale_1.sql" />
     <Build Include="Security\presale_1.sql" />
     <Build Include="presale\Sequences\PresaleStockNumberSequence_1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="..\..\..\..\Documents\SQL Server Management Studio\DAC Packages\Buy.dacpac">
+      <HintPath>..\..\..\..\Documents\SQL Server Management Studio\DAC Packages\Buy.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>Buy</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
 </Project>
