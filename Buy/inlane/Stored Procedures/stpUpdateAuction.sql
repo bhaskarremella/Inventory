@@ -1,0 +1,138 @@
+﻿
+CREATE procedure [inlane].[stpUpdateAuction]
+	@AuctionID AS BIGINT
+	,@AuctionKeyID AS VARCHAR(10)
+	,@LastUpdatedEmpID AS VARCHAR(128)
+	,@AuctionName AS VARCHAR(255)
+	,@AuctionInitials AS VARCHAR(20)
+	,@Address1 AS varchar(50)
+	,@City AS VARCHAR(40)
+	,@AuctionState AS CHAR(2)
+	,@PostalCD AS VARCHAR(20)
+	,@Country AS VARCHAR(30)
+	,@Phone AS VARCHAR(30)
+	,@IsActive AS BIT
+	,@AuctionVendorID AS INT
+/*----------------------------------------------------------------------------------------
+Created By  : Lisa Aguilera
+Created On  :2016-10-25
+Application : InLaneBuy
+Description : updated InLaneBuy Auction Dimension from SSIS
+
+EXEC inlane.stpUpdateAuction
+------------------------------------------------------------------------------------------
+*/
+AS
+BEGIN;
+SET NOCOUNT ON;
+
+BEGIN TRY;
+DECLARE @TranCount int;
+      --<other declarations>
+
+-- Get if the session is in transaction state yet or not
+SET @TranCount = @@trancount;
+
+-- Detect if the procedure was called from an active transaction and save that for later use. In the procedure, 
+-- @TranCount = 0 means there was no active transaction and the procedure started one. @TranCount > 0 means 
+-- an active transaction was started before the procedure was called.
+IF @TranCount = 0
+   -- No active transaction so begin one
+   BEGIN TRAN;
+ELSE
+   -- Create a savepoint to be able to roll back only the work done in the procedure if there is an error
+   SAVE TRANSACTION stpUpdateAuction;
+
+		UPDATE a
+		SET    
+			  [AuctionKeyID] = @AuctionKeyID
+			  ,[LastUpdatedEmpID] =  @LastUpdatedEmpID
+			  ,[RowUpdatedDateTime] = SYSDATETIME()
+			  ,[AuctionName] = @AuctionName
+			  ,[AuctionInitials] = @AuctionInitials
+			  ,[Address1] = @Address1
+			  ,[City] = @City
+			  ,[AuctionState] = @AuctionState
+			  ,[PostalCD]= @PostalCD
+			  ,[Country] = @Country
+			  ,[Phone] = @Phone
+			  ,[IsActive] = @IsActive
+			  ,[AuctionVendorID] = @AuctionVendorID
+		FROM inlane.tblAuction a
+		WHERE 
+			AuctionID = @AuctionID
+			AND 
+				(a.AuctionKeyID <> @AuctionKeyID
+				OR a.AuctionName <> @AuctionName
+				OR a.AuctionInitials <> @AuctionInitials
+				OR a.Address1 <> @Address1
+				OR a.City <> @City
+				OR a.AuctionState <> @AuctionState
+				OR a.PostalCD<> @PostalCD
+				OR a.Country <> @Country
+				OR a.Phone <> @Phone
+				OR a.IsActive <> @IsActive
+				OR a.AuctionVendorID <> @AuctionVendorID)
+			
+
+
+-- @TranCount = 0 means no transaction was started before the procedure was called.
+-- The procedure must commit the transaction it started.
+IF @TranCount = 0
+   COMMIT;
+
+END TRY
+
+/*------------------------------------------------------
+Special catch logic only good for CUD type procedures
+Because it does contains rollback code.
+------------------------------------------------------*/
+BEGIN CATCH
+    DECLARE 
+        @ErrorNumber     INT,
+        @ErrorSeverity   INT,
+        @ErrorState      INT,
+        @ErrorLine       INT,
+        @ErrorProcedure  NVARCHAR(200),
+        @ErrorMessage    VARCHAR(4000),
+        @XactState       INT;
+
+    -- Get the state of the existing transaction so we can tell what type of rollback needs to occur
+    SET @XactState = XACT_STATE();
+
+    -- @TranCount = 0 means no transaction was started before the procedure was called.
+    -- The procedure must rollback the transaction it started.
+    IF @TranCount = 0
+       ROLLBACK;
+    ELSE
+       -- If the state of the transaction is stable, then rollback just the current save point work
+       IF @XactState <> -1
+            ROLLBACK TRANSACTION stpUpdateAuction;
+
+    -- Assign variables to error-handling functions that capture information for RAISERROR.
+    SELECT 
+        @ErrorNumber = ERROR_NUMBER(),
+        @ErrorSeverity = ERROR_SEVERITY(),
+        @ErrorState = ERROR_STATE(),
+        @ErrorLine = ERROR_LINE(),
+        @ErrorProcedure = ISNULL(ERROR_PROCEDURE(), '-');
+
+    -- Building the message string that will contain original error information.
+    SELECT @ErrorMessage = 
+        N'Error %d, Level %d, State %d, Procedure %s, Line %d, ' + 
+            'Message: '+ ERROR_MESSAGE();
+            
+    -- Use RAISERROR inside the CATCH block to return error
+    -- information about the original error that caused
+    -- execution to jump to the CATCH block.
+    RAISERROR (@ErrorMessage, -- Message text.
+               16,  -- must be 16 for Informatica to pick it up
+               1,
+               @ErrorNumber,
+               @ErrorSeverity, -- Severity.
+               @ErrorState, -- State.
+               @ErrorProcedure,
+               @ErrorLine
+               );
+END CATCH;
+END;

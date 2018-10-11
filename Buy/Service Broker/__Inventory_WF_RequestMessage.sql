@@ -1,0 +1,4 @@
+﻿CREATE MESSAGE TYPE [//Inventory/WF_RequestMessage]
+    AUTHORIZATION [dbo]
+    VALIDATION = WELL_FORMED_XML;
+

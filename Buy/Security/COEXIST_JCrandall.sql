@@ -1,0 +1,3 @@
+﻿CREATE USER [COEXIST\JCrandall]
+    WITH DEFAULT_SCHEMA = [COEXIST\JCrandall];
+

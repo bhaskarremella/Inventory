@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [COEXIST\JCrandall]
+    AUTHORIZATION [COEXIST\JCrandall];
+

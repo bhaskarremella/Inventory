@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Buy]
+    AUTHORIZATION [dbo];
+

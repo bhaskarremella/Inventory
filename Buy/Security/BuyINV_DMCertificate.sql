@@ -1,0 +1,4 @@
+﻿CREATE CERTIFICATE [BuyINV_DMCertificate]
+    AUTHORIZATION [BuyInvDMUser]
+    WITH SUBJECT = N'Target Certificate for InventoryDM Database', START_DATE = N'2016-09-15T20:16:15', EXPIRY_DATE = N'2018-12-31T00:00:00';
+

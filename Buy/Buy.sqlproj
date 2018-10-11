@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Buy</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8e67985d-199d-4f57-82c4-3d6acb4c4aba}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Buy</RootNamespace>
+    <AssemblyName>Buy</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="inlane\" />
+    <Folder Include="inlane\Tables\" />
+    <Folder Include="postsale\" />
+    <Folder Include="postsale\Tables\" />
+    <Folder Include="Audit\" />
+    <Folder Include="Audit\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="mybuys\" />
+    <Folder Include="mybuys\Tables\" />
+    <Folder Include="experian\" />
+    <Folder Include="experian\Tables\" />
+    <Folder Include="presale\" />
+    <Folder Include="presale\Tables\" />
+    <Folder Include="Analytics\" />
+    <Folder Include="Analytics\Tables\" />
+    <Folder Include="Buy\" />
+    <Folder Include="Buy\Tables\" />
+    <Folder Include="bid\" />
+    <Folder Include="bid\Tables\" />
+    <Folder Include="batch\" />
+    <Folder Include="batch\Tables\" />
+    <Folder Include="stage\" />
+    <Folder Include="stage\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="postsale\Views\" />
+    <Folder Include="inlane\Views\" />
+    <Folder Include="bid\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="bid\Functions\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="bid\Stored Procedures\" />
+    <Folder Include="presale\Stored Procedures\" />
+    <Folder Include="experian\Stored Procedures\" />
+    <Folder Include="postsale\Stored Procedures\" />
+    <Folder Include="inlane\Stored Procedures\" />
+    <Folder Include="batch\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
+    <Folder Include="presale\User Defined Types\" />
+    <Folder Include="bid\User Defined Types\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="experian\User Defined Types\" />
+    <Folder Include="Service Broker\" />
+    <Folder Include="presale\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="inlane\Tables\tblVehicleList.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingPostSaleInspectionOperatingLocation.sql" />
+    <Build Include="Audit\Tables\tblAccuCheckHistory.sql" />
+    <Build Include="dbo\Tables\tblKBBValuation.sql" />
+    <Build Include="mybuys\Tables\tblBuyAuctionFee.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingPostSaleInspectionConsignment.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingOffering.sql" />
+    <Build Include="dbo\Tables\tblKBBOption.sql" />
+    <Build Include="dbo\Tables\tblBuyInspectionStage.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingConsignmentUnitPhysicalLocation.sql" />
+    <Build Include="experian\Tables\tblAccuCheck.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingPostSaleInspectionConsignmentUnit.sql" />
+    <Build Include="mybuys\Tables\tblBuyAuctionType.sql" />
+    <Build Include="dbo\Tables\__MigrationHistory.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingConsignmentUnitPhysicalLocationAddress.sql" />
+    <Build Include="experian\Tables\tblAccuCheckHistory.sql" />
+    <Build Include="dbo\Tables\tblBuyDestinationPriority.sql" />
+    <Build Include="dbo\Tables\tblBuyDestinationPriorityStage.sql" />
+    <Build Include="inlane\Tables\tblAuction.sql" />
+    <Build Include="inlane\Tables\tblBuyLaneSelect.sql" />
+    <Build Include="mybuys\Tables\tblBuyNet.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionVehicleList.sql" />
+    <Build Include="presale\Tables\tblManheimFeedError.sql" />
+    <Build Include="Analytics\Tables\tblBuyAuctionDayException.sql" />
+    <Build Include="Analytics\Tables\tblBuyAuctionLaneStartTime.sql" />
+    <Build Include="Analytics\Tables\tblBuyProcessBuyDirection.sql" />
+    <Build Include="Analytics\Tables\tblBuyProcessDirectionPriority.sql" />
+    <Build Include="Analytics\Tables\tblBuyProcessLaneExclusion.sql" />
+    <Build Include="dbo\Tables\tblVehicleAnalyticData.sql" />
+    <Build Include="presale\Tables\tblPurgePresaleManheimFeed.sql" />
+    <Build Include="Analytics\Tables\tblDTPreferredCriteria.sql" />
+    <Build Include="Analytics\Tables\tblBuyProcessModelMultiplier.sql" />
+    <Build Include="Audit\Tables\tblVehicleDecode.sql" />
+    <Build Include="dbo\Tables\tblVehicleDecode.sql" />
+    <Build Include="Analytics\Tables\tblInspectionNoBuyQuestion.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionVehicleAttributes.sql" />
+    <Build Include="presale\Tables\tblManheimFeed.sql" />
+    <Build Include="dbo\Tables\tblListing.sql" />
+    <Build Include="Analytics\Tables\tblManheimNoBuySellers.sql" />
+    <Build Include="Analytics\Tables\tblBuyProcessSizeMultiplier.sql" />
+    <Build Include="Analytics\Tables\tblManheimVendorConversion.sql" />
+    <Build Include="Audit\Tables\tblVehicleDecodeOption.sql" />
+    <Build Include="presale\Tables\tblManheimFeedImage.sql" />
+    <Build Include="dbo\Tables\tblVehicleDecodeOption.sql" />
+    <Build Include="presale\Tables\tblAuctionEdgeFeedAuction.sql" />
+    <Build Include="dbo\Tables\tblBuyDecode.sql" />
+    <Build Include="inlane\Tables\tblInspection.sql" />
+    <Build Include="dbo\Tables\tblBuyStage.sql" />
+    <Build Include="dbo\Tables\tblBuyVehicle2.sql" />
+    <Build Include="dbo\Tables\tblBuyDecodeType.sql" />
+    <Build Include="inlane\Tables\tblAuctionVehicleCount.sql" />
+    <Build Include="postsale\Tables\tblManheimFeed.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListing.sql" />
+    <Build Include="presale\Tables\tblAuctionEdgeFeedVehicleMiscItem.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionDecode.sql" />
+    <Build Include="dbo\Tables\tblauctionstagefornewbuy.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingConsignment.sql" />
+    <Build Include="dbo\Tables\tblBuy.sql" />
+    <Build Include="Buy\Tables\InLaneBuyVehicle.sql" />
+    <Build Include="bid\Tables\tblProxyBid.sql" />
+    <Build Include="dbo\Tables\vEvaluateAdesa.sql" />
+    <Build Include="bid\Tables\tblProxyBidAttempt.sql" />
+    <Build Include="presale\Tables\tblAuctionEdgeFeed.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionHouseType.sql" />
+    <Build Include="batch\Tables\tblBatch.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionInspection.sql" />
+    <Build Include="bid\Tables\tblProxyBidRequest.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingBuyer.sql" />
+    <Build Include="mybuys\Tables\tblBuyAuctionPurchaseChannelType.sql" />
+    <Build Include="bid\Tables\tblProxyBidRequestType.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionListType.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionActionItemType.sql" />
+    <Build Include="bid\Tables\tblProxyBidStatus.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingInvoice.sql" />
+    <Build Include="mybuys\Tables\tblBuyAuctionPurchaseAttribute.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionVehicle.sql" />
+    <Build Include="presale\Tables\tblManheimConditionReport.sql" />
+    <Build Include="dbo\Tables\tblBuyNetEntry.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingTitle.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionActionItem.sql" />
+    <Build Include="dbo\Tables\tblInspectionStage.sql" />
+    <Build Include="dbo\Tables\lmSnapshot.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingPostSaleInspection.sql" />
+    <Build Include="dbo\Tables\lmRollup.sql" />
+    <Build Include="dbo\Tables\tblBuyInspection.sql" />
+    <Build Include="inlane\Tables\tblBuy.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionVehicleInspectionStatus.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingComments.sql" />
+    <Build Include="dbo\Tables\tblBuyInspectionFailReasonType.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingConsignmentUnit.sql" />
+    <Build Include="dbo\Tables\tblNoBidReasonType.sql" />
+    <Build Include="dbo\Tables\tblMMRVehicleDescription.sql" />
+    <Build Include="dbo\Tables\tblBuyInspectionFailReasonCategoryType.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingConsignmentSeller.sql" />
+    <Build Include="dbo\Tables\tblStock.sql" />
+    <Build Include="presale\Tables\tblCombinedPresale.sql" />
+    <Build Include="bid\Tables\tblProxyBidOriginType.sql" />
+    <Build Include="stage\Tables\tblVehicleListStage.sql" />
+    <Build Include="dbo\Tables\tblBuyInspectionType.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingOfferingOperatingLocation.sql" />
+    <Build Include="mybuys\Tables\tblBuyAuctionFeeType.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedStage.sql" />
+    <Build Include="dbo\Tables\tblBuyNoBidReasonType.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingOfferingSaleKey.sql" />
+    <Build Include="mybuys\Tables\tblBuyAuctionFeeCategoryType.sql" />
+    <Build Include="presale\Tables\tblAdesaPreSale.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionInspectionCheckboxDataStage.sql" />
+    <Build Include="dbo\Tables\tblKBBVehicle.sql" />
+    <Build Include="postsale\Tables\tblManheimRawData.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingBuyerRep.sql" />
+    <Build Include="dbo\Tables\tblBuyType.sql" />
+    <Build Include="postsale\Tables\tblManheimRawDataBulk.sql" />
+    <Build Include="dbo\Tables\tblBuyAuctionInspectionCheckboxData.sql" />
+    <Build Include="dbo\Tables\tblKBBPriceType.sql" />
+    <Build Include="dbo\Tables\tblJMeterTest.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingTitleOdometer.sql" />
+    <Build Include="Audit\Tables\tblAccuCheck.sql" />
+    <Build Include="mybuys\Tables\tblBuyAuctionGuaranteeType.sql" />
+    <Build Include="bid\Tables\tblExternalLocationType.sql" />
+    <Build Include="dbo\Tables\tblBuyVehicle.sql" />
+    <Build Include="postsale\Tables\tblManheimFeedListingTitleOperatingLocation.sql" />
+    <Build Include="dbo\Views\vBuyVehicleDataPull.sql" />
+    <Build Include="postsale\Views\vManheimFeedFlattened.sql" />
+    <Build Include="inlane\Views\vAuctionVehicleCount.sql" />
+    <Build Include="dbo\Views\vDistinctAuctionLane.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\vDistinctAuctionLaneForInspection.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="bid\Views\vProxyBidsForBuyers.sql" />
+    <Build Include="dbo\Views\vBuyInspectionDataPull.sql" />
+    <Build Include="bid\Views\vProxyBid.sql" />
+    <Build Include="Security\db_showplan.sql" />
+    <Build Include="Security\db_execsp.sql" />
+    <Build Include="Security\db_viewdefinition.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DB Dev General.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DB Dev General_1.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-BA General.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-BA General_1.sql" />
+    <Build Include="Security\BuyINVUser.sql" />
+    <Build Include="Security\COEXIST_DFOLZ.sql" />
+    <Build Include="Security\COEXIST_svc-shared-dev.sql" />
+    <Build Include="Security\COEXIST_svc-shared-dev_1.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-App Dev General.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-App Dev General_1.sql" />
+    <Build Include="Security\COEXIST_svc-inventory-dev.sql" />
+    <Build Include="Security\COEXIST_svc-inventory-dev_1.sql" />
+    <Build Include="Security\BuyInvDMUser.sql" />
+    <Build Include="Security\COEXIST_svc-swdpa-prod.sql" />
+    <Build Include="Security\COEXIST_svc-swdpa-prod_1.sql" />
+    <Build Include="Security\COEXIST_TBLEILE.sql" />
+    <Build Include="Security\COEXIST_svc-powerapps-dev.sql" />
+    <Build Include="Security\COEXIST_svc-powerapps-dev_1.sql" />
+    <Build Include="Security\COEXIST_laguile.sql" />
+    <Build Include="Security\COEXIST_DFONJGA.sql" />
+    <Build Include="Security\COEXIST_svc-ssis-test.sql" />
+    <Build Include="Security\COEXIST_svc-ssis-test_1.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DevOPS.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DevOPS_1.sql" />
+    <Build Include="Security\COEXIST_JCrandall.sql" />
+    <Build Include="Security\COEXIST_VShah.sql" />
+    <Build Include="Security\COEXIST_JaBarnes.sql" />
+    <Build Include="Security\COEXIST_glukemi.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DB Dev Interns.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DB Dev Interns_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="bid\Functions\fnCreateProxyBidIdentifier.sql" />
+    <Build Include="bid\Functions\fnGetProxyBidID.sql" />
+    <Build Include="dbo\Functions\RemoveNonNumericChar.sql" />
+    <Build Include="dbo\Stored Procedures\stpBuyDestinationPriority.sql" />
+    <Build Include="bid\Stored Procedures\stpProxyBidsForBuyersByVIN.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetBuyDestinationPriorityList.sql" />
+    <Build Include="bid\Stored Procedures\stpProxyBidsForBuyersByUser.sql" />
+    <Build Include="presale\Stored Procedures\zzzstpLoadAdesaPresaleTrend.sql" />
+    <Build Include="presale\Stored Procedures\stpPurgePresaleManheimFeed.sql" />
+    <Build Include="experian\Stored Procedures\stpGetVinsForRefresh.sql" />
+    <Build Include="experian\Stored Procedures\stpIUAccuCheck.sql" />
+    <Build Include="postsale\Stored Procedures\stpInsertManheimFeed.sql" />
+    <Build Include="inlane\Stored Procedures\stpDeleteSelectedLaneInfo.sql" />
+    <Build Include="dbo\Stored Procedures\stpLoadBuyAuctionInspectionCheckboxData.sql" />
+    <Build Include="inlane\Stored Procedures\stpUpdateSelectedLaneInfo.sql" />
+    <Build Include="dbo\Stored Procedures\getFileArchiveID.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeAuction.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetNoVehicleTestResult.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeAuctionReference.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicle.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleConditionFlags.sql" />
+    <Build Include="dbo\Stored Procedures\stpBuyInsertUpdateVehicleDetail.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleConditionFlagsReference.sql" />
+    <Build Include="presale\Stored Procedures\stpIUManheimFeed.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleConditionReference.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleConditions.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleImagesReference.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleMiscItemReference.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleOptionReference.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleTireReference.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetFileArchiveID.sql" />
+    <Build Include="presale\Stored Procedures\stpSearchBuyonicVehicle.sql" />
+    <Build Include="presale\Stored Procedures\stpSearchPresaleFeed.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleImages.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleMiscItem.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleOption.sql" />
+    <Build Include="presale\Stored Procedures\stpSearchNoBuy.sql" />
+    <Build Include="dbo\Stored Procedures\stpMergeVehicleTire.sql" />
+    <Build Include="presale\Stored Procedures\stpSearchOutsideBuy.sql" />
+    <Build Include="presale\Stored Procedures\stpSearchVehicleCondition.sql" />
+    <Build Include="presale\Stored Procedures\stpSearchSeller.sql" />
+    <Build Include="presale\Stored Procedures\stpSearchExclusion.sql" />
+    <Build Include="dbo\Stored Procedures\TestPowerApps.sql" />
+    <Build Include="presale\Stored Procedures\InLaneBuyerFilterInspection.sql" />
+    <Build Include="presale\Stored Procedures\stpDAuctionEdgeFeed.sql" />
+    <Build Include="batch\Stored Procedures\stpCreateBatch.sql" />
+    <Build Include="presale\Stored Procedures\stpIUAuctionEdgeFeed.sql" />
+    <Build Include="inlane\Stored Procedures\stpUpdateAuctionVehicleCount.sql" />
+    <Build Include="inlane\Stored Procedures\stpUpdateAuction.sql" />
+    <Build Include="inlane\Stored Procedures\stpUpdateVehicleList.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetActionableVehicles.sql" />
+    <Build Include="dbo\Stored Procedures\stpDistinctAuctionLaneForInspection.sql" />
+    <Build Include="presale\Stored Procedures\stpIUCombinedPresale.sql" />
+    <Build Include="dbo\Stored Procedures\stpDistinctAuctionLane.sql" />
+    <Build Include="dbo\Stored Procedures\stpBuyInsertUpdateVehicleDetailWithInspection.sql" />
+    <Build Include="presale\Stored Procedures\stpPurgeAuctionEdgeFeed.sql" />
+    <Build Include="dbo\Stored Procedures\stpInsertUpdateBuyNetEntry.sql" />
+    <Build Include="presale\Stored Procedures\stpDeletetblAdesaPresale.sql" />
+    <Build Include="dbo\Stored Procedures\stpInsertUpdateBuyonicAuction.sql" />
+    <Build Include="Database Triggers\Disallow_Securitychanges.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="presale\User Defined Types\typManheimFeed.sql" />
+    <Build Include="bid\User Defined Types\typCreateProxyBidModel.sql" />
+    <Build Include="bid\User Defined Types\typCreateBidModel.sql" />
+    <Build Include="dbo\User Defined Types\StringList.sql" />
+    <Build Include="experian\User Defined Types\typeAccuCheckIDList.sql" />
+    <Build Include="experian\User Defined Types\typeAccuCheck.sql" />
+    <Build Include="experian\User Defined Types\typeAccuCheckHistory.sql" />
+    <Build Include="presale\User Defined Types\typAuctionEdgeFeed.sql" />
+    <Build Include="Security\BuyINVCertificate.sql" />
+    <Build Include="Security\BuyINV_DMCertificate.sql" />
+    <Build Include="Service Broker\__INVContract.sql" />
+    <Build Include="Service Broker\__Inventory_WF_RequestMessage.sql" />
+    <Build Include="Service Broker\__Inventory_WF_ReplyMessage.sql" />
+    <Build Include="Service Broker\INVBuyQueue.sql" />
+    <Build Include="Service Broker\DMBuyTargetBinding.sql" />
+    <Build Include="Security\Access.sql" />
+    <Build Include="Security\Analytics.sql" />
+    <Build Include="Security\AuctionEdge.sql" />
+    <Build Include="Security\Audit.sql" />
+    <Build Include="Security\batch.sql" />
+    <Build Include="Security\bid.sql" />
+    <Build Include="Security\bidapi.sql" />
+    <Build Include="Security\bidstaging.sql" />
+    <Build Include="Security\Buy.sql" />
+    <Build Include="Security\COEXIST_DFONJGA_1.sql" />
+    <Build Include="Security\COEXIST_glukemi_1.sql" />
+    <Build Include="Security\COEXIST_JaBarnes_1.sql" />
+    <Build Include="Security\COEXIST_JCrandall_1.sql" />
+    <Build Include="Security\COEXIST_laguile_1.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DB Dev Interns_2.sql" />
+    <Build Include="Security\COEXIST_svc-swdpa-prod_2.sql" />
+    <Build Include="Security\COEXIST_TBLEILE_1.sql" />
+    <Build Include="Security\COEXIST_VShah_1.sql" />
+    <Build Include="Security\experian.sql" />
+    <Build Include="Security\inlane.sql" />
+    <Build Include="Security\mybuys.sql" />
+    <Build Include="Security\postsale.sql" />
+    <Build Include="Security\presale.sql" />
+    <Build Include="Security\proxy.sql" />
+    <Build Include="Security\stage.sql" />
+    <Build Include="Service Broker\__INV_Buy_TargetService.sql" />
+    <Build Include="presale\Sequences\PresaleStockNumberSequence.sql" />
+  </ItemGroup>
+</Project>

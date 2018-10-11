@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [COEXIST\laguile]
+    AUTHORIZATION [COEXIST\laguile];
+

@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [bidapi]
+    AUTHORIZATION [COEXIST\JCrandall];
+

@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[tblKBBValuation] (
+    [KBBValuationID]                 BIGINT          IDENTITY (1, 1) NOT NULL,
+    [RowLoadedDateTime]              DATETIME2 (7)   CONSTRAINT [DF_tblKBBValuation_RowLoadedDateTime] DEFAULT (sysdatetime()) NOT NULL,
+    [RowUpdatedDateTime]             DATETIME2 (7)   NULL,
+    [LastChangedByEmpID]             VARCHAR (20)    NULL,
+    [KBBVehicleID]                   BIGINT          NOT NULL,
+    [KBBPriceTypeID]                 SMALLINT        NOT NULL,
+    [Mileage]                        INT             NOT NULL,
+    [Zip]                            VARCHAR (10)    NOT NULL,
+    [EffectiveNonRegionalAdjustment] DECIMAL (10, 4) NULL,
+    [MaxDeductValue]                 DECIMAL (10, 4) NULL,
+    [MileageAdjustment]              DECIMAL (10, 4) NULL,
+    [MileageAdjustmentType]          VARCHAR (20)    NULL,
+    [MileageAdjustmentValue]         DECIMAL (10, 4) NULL,
+    [NationalBasePrice]              DECIMAL (10, 4) NULL,
+    [RegionAdjustment]               DECIMAL (10, 4) NULL,
+    [RegionAdjustmentType]           VARCHAR (20)    NULL,
+    [RegionAdjustmentValue]          DECIMAL (10, 4) NULL,
+    [KBBValue]                       DECIMAL (10, 4) NULL,
+    [HighPrice]                      DECIMAL (10, 4) NULL,
+    [LowPrice]                       DECIMAL (10, 4) NULL,
+    CONSTRAINT [PK_tblKBBValuation_KBBValuationID] PRIMARY KEY CLUSTERED ([KBBValuationID] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [FK_tblKBBValuation_tblKBBPriceType] FOREIGN KEY ([KBBPriceTypeID]) REFERENCES [dbo].[tblKBBPriceType] ([KBBPriceTypeID]),
+    CONSTRAINT [FK_tblKBBValuation_tblKBBVehicle] FOREIGN KEY ([KBBVehicleID]) REFERENCES [dbo].[tblKBBVehicle] ([KBBVehicleID])
+);
+

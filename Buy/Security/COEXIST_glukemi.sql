@@ -1,0 +1,3 @@
+﻿CREATE USER [COEXIST\glukemi] FOR LOGIN [COEXIST\glukemi]
+    WITH DEFAULT_SCHEMA = [COEXIST\glukemi];
+

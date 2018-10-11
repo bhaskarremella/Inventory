@@ -1,0 +1,2 @@
+﻿CREATE USER [BuyInvDMUser] WITHOUT LOGIN;
+

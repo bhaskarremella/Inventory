@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Inventory", "Inventory\Inventory.sqlproj", "{972D3FA2-3B5D-442A-B3B8-56870C3F81DE}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Buy", "Buy\Buy.sqlproj", "{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,17 +11,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{972D3FA2-3B5D-442A-B3B8-56870C3F81DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{972D3FA2-3B5D-442A-B3B8-56870C3F81DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{972D3FA2-3B5D-442A-B3B8-56870C3F81DE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{972D3FA2-3B5D-442A-B3B8-56870C3F81DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{972D3FA2-3B5D-442A-B3B8-56870C3F81DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{972D3FA2-3B5D-442A-B3B8-56870C3F81DE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E67985D-199D-4F57-82C4-3D6ACB4C4ABA}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E7B97F1F-6B64-486E-9E13-E86134A7DCB7}
+		SolutionGuid = {248F1BF1-8E1E-49C2-BC13-D449E447E4B6}
 	EndGlobalSection
 EndGlobal

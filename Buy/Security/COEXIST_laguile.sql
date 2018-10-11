@@ -1,0 +1,3 @@
+﻿CREATE USER [COEXIST\laguile] FOR LOGIN [COEXIST\laguile]
+    WITH DEFAULT_SCHEMA = [COEXIST\laguile];
+

@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [COEXIST\glukemi]
+    AUTHORIZATION [COEXIST\glukemi];
+

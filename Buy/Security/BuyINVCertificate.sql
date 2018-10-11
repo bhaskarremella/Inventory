@@ -1,0 +1,4 @@
+﻿CREATE CERTIFICATE [BuyINVCertificate]
+    AUTHORIZATION [BuyINVUser]
+    WITH SUBJECT = N'Source Certificate for Buy Database', START_DATE = N'2016-09-13T16:16:04', EXPIRY_DATE = N'2018-12-31T00:00:00';
+

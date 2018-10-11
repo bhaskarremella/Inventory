@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [proxy]
+    AUTHORIZATION [dbo];
+
