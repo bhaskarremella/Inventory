@@ -378,4 +378,11 @@
     <Build Include="Service Broker\__INV_Buy_TargetService.sql" />
     <Build Include="presale\Sequences\PresaleStockNumberSequence.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="..\..\..\..\Documents\SQL Server Management Studio\DAC Packages\Buy.dacpac">
+      <HintPath>..\..\..\..\Documents\SQL Server Management Studio\DAC Packages\Buy.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>Buy</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
 </Project>
