@@ -14,6 +14,17 @@ BEGIN
 BEGIN TRY
 SET NOCOUNT ON
 
+SELECT 
+	VIN, 
+	AuctionName, 
+	SaleDate, 
+	CRLLT 
+FROM dbo.tblBuyDestinationPriorityStage
+WHERE VIN = 'XXX'
+	AND AuctionName = 'xxx'
+	AND saleDate  = 'xxx'
+	AND CRLLT ='xxx'
+
   -- Get if the session is in transaction state yet or not
          -- Detect if the procedure was called from an active transaction and save that for later use. In the procedure, 
          -- @TranCount = 0 means there was no active transaction and the procedure started one. @TranCount > 0 means 
