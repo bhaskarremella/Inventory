@@ -377,6 +377,7 @@
     <Build Include="Security\stage.sql" />
     <Build Include="Service Broker\__INV_Buy_TargetService.sql" />
     <Build Include="presale\Sequences\PresaleStockNumberSequence.sql" />
+    <Build Include="dbo\Stored Procedures\Procedure1.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="..\..\..\..\Documents\SQL Server Management Studio\DAC Packages\Buy.dacpac">
